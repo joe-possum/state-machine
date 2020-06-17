@@ -44,6 +44,7 @@ header += 'void %s_state_init(struct %s_state *pvar, const char *name);\n'%(name
 header += 'void %s_state_set(struct %s_state *,%s_states);\n\n'%(name,name,name)
 header += '#define %s_SET(P,X) %s_state_set(P,%s ## X)\n'%(name,name,prefix)
 header += '#define %s_IS(X,V) (%s ## X == V.current)\n'%(name,prefix)
+header += '#define %s_LT(X,V) (V.current < %s ## X)\n'%(name,prefix)
 header += '#endif\n'
 source += '\n};\n\n'
 source += 'void %s_state_init(struct %s_state *pvar, const char *name) {\n'%(name,name)
