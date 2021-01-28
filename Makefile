@@ -9,7 +9,7 @@ install : t.py
 	rm t.py
 
 t.py : state-machine.py Makefile
-	echo "#! /bin/env python3" > t.py
-	echo -e "#\n# Installed from ${URL}\n# ${COMMIT}\n#\n" >> t.py
+	/bin/echo "#! /bin/env python3" > t.py
+	/bin/echo -e "#\n# Installed from ${URL}\n# ${COMMIT}\n#\n" >> t.py
 #	echo -e "#\n# Installed from $PWD\n#" >> t.py
 	cat state-machine.py >> t.py
